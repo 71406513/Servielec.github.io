@@ -1,0 +1,2490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVIELEC E.I.R.L. - Especialistas en Mantenimiento de Motores Eléctricos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        :root {
+            --primary: #0063B3;
+            --primary-dark: #004C8A;
+            --primary-light: #4A90E2;
+            --secondary: #2C3E50;
+            --accent: #00A8E8;
+            --accent-dark: #0086BA;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+            --light-gray: #E9ECEF;
+            --dark-gray: #495057;
+            --success: #28A745;
+            --warning: #FFC107;
+            --danger: #DC3545;
+            --transition: all 0.3s ease;
+            --transition-slow: all 0.5s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.3);
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+        }
+
+        .dark-mode {
+            --primary: #0084FF;
+            --primary-dark: #0066CC;
+            --primary-light: #5DA8FF;
+            --secondary: #E9ECEF;
+            --accent: #00C6FF;
+            --accent-dark: #00A0D6;
+            --light: #121212;
+            --dark: #F8F9FA;
+            --gray: #ADB5BD;
+            --light-gray: #2D2D2D;
+            --dark-gray: #ADB5BD;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn:hover:after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 5px solid var(--light-gray);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loader-text {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .dark-mode header {
+            background: rgba(18, 18, 18, 0.95);
+        }
+
+        .header-scrolled {
+            padding: 5px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 55px;
+            margin-right: 12px;
+            transition: var(--transition);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            font-size: 1rem;
+            padding: 5px 0;
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--secondary);
+            font-size: 1.3rem;
+            cursor: pointer;
+            margin-right: 20px;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-gray);
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary);
+            background: rgba(0, 99, 179, 0.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--secondary);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .menu-toggle:hover {
+            background: rgba(0, 99, 179, 0.1);
+            color: var(--primary);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: var(--shadow-hover);
+            z-index: 100;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 75px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 85px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            position: relative;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 20px;
+            color: white;
+            animation: fadeInUp 1s ease;
+            line-height: 1.2;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.2s;
+            animation-fill-mode: both;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.4s;
+            animation-fill-mode: both;
+            flex-wrap: wrap;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2.2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, var(--light), transparent);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition-slow);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: -15px;
+            bottom: -15px;
+            border: 3px solid var(--primary);
+            border-radius: var(--border-radius-lg);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about-features {
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* Mission Vision Section */
+        .mission-vision {
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-vision::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .mission-vision .section-title h2 {
+            color: white;
+        }
+
+        .mission-vision .section-title h2:after {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .mission-vision .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .mv-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mv-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mv-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mv-item h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .mv-item p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--light);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            justify-items: center;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            max-width: 380px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .dark-mode .service-card {
+            background: var(--light-gray);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-header {
+            padding: 40px 30px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            background: rgba(0, 99, 179, 0.1);
+            border-radius: 50%;
+        }
+
+        .service-body {
+            padding: 0 30px 30px;
+            flex-grow: 1;
+        }
+
+        .service-body ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .service-body li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .service-body li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .service-footer {
+            padding: 25px 30px;
+            background: var(--light-gray);
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .dark-mode .service-footer {
+            border-top: 1px solid #444;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(0,99,179,0.3)"/></svg>');
+            background-size: 100% 100%;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: white;
+            background: linear-gradient(to right, var(--accent), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-text {
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Clients Section */
+        .clients {
+            background: var(--light);
+            position: relative;
+        }
+
+        .clients::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+        .clients-slider {
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .client-item {
+            text-align: center;
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .client-logo {
+            height: 90px;
+            width: auto;
+            margin: 0 auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .client-item:hover .client-logo {
+            filter: grayscale(0);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+        .testimonials-slider {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-item {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin: 20px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .dark-mode .testimonial-item {
+            background: var(--light-gray);
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 3rem;
+            color: var(--primary-light);
+            opacity: 0.2;
+        }
+
+        .testimonial-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 25px;
+            border: 4px solid var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .testimonial-position {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        .testimonial-rating {
+            margin-top: 15px;
+            color: #FFC107;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--light);
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            padding-right: 20px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .contact-details p {
+            color: var(--gray);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .contact-form {
+            background: var(--light-gray);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .dark-mode .form-group input,
+        .dark-mode .form-group textarea,
+        .dark-mode .form-group select {
+            background: var(--dark);
+            border-color: #444;
+            color: var(--light);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 99, 179, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .whatsapp-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* Location Tabs */
+        .location-section {
+            background: var(--light-gray);
+            position: relative;
+        }
+
+        .location-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+        .location-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--light-gray);
+            justify-content: center;
+        }
+
+        .location-tab {
+            padding: 15px 30px;
+            background: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            color: var(--gray);
+            border-bottom: 3px solid transparent;
+        }
+
+        .dark-mode .location-tab {
+            background: var(--dark);
+        }
+
+        .location-tab.active {
+            background: white;
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .dark-mode .location-tab.active {
+            background: var(--light-gray);
+        }
+
+        .location-tab:first-child {
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+
+        .location-tab:last-child {
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .location-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .location-content.active {
+            display: block;
+        }
+
+        .map-container {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 450px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-about {
+            padding-right: 20px;
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+        }
+
+        .footer-about p {
+            margin-bottom: 25px;
+            opacity: 0.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 8px;
+        }
+
+        .footer-newsletter h3 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .footer-newsletter h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-newsletter p {
+            margin-bottom: 25px;
+            opacity: 0.8;
+        }
+
+        .newsletter-form {
+            display: flex;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: transparent;
+            color: white;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--primary-dark);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+            
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .mv-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+            
+            .header-container {
+                padding: 12px 0;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--light);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                padding: 50px 0;
+                z-index: 999;
+            }
+            
+            .dark-mode .nav-menu {
+                background: var(--light);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 20px 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .location-tabs {
+                flex-direction: column;
+            }
+            
+            .location-tab {
+                border-radius: 0;
+                text-align: center;
+            }
+            
+            .location-tab:first-child {
+                border-radius: var(--border-radius) var(--border-radius) 0 0;
+            }
+            
+            .location-tab:last-child {
+                border-radius: 0 0 var(--border-radius) var(--border-radius);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-item {
+                padding: 30px 20px;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+        <div class="loader-text">Cargando SERVIELEC...</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/imagen/servielec.png" alt="SERVIELEC Logo">
+                <h1>SERVIELEC</h1>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/51992123035?text=Hola,%20estoy%20interesado%20en%20los%20servicios%20de%20SERVIELEC" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">¿Necesitas ayuda?</div>
+    </a>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-an-electric-motor-12585-large.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Soluciones Integrales en Mantenimiento Electromecánico</h1>
+                <p>Expertos en mantenimiento predictivo, preventivo y correctivo de motores eléctricos para los sectores industrial y minero con los más altos estándares de calidad.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn">Solicitar Cotización</a>
+                    <a href="#servicios" class="btn btn-outline">Nuestros Servicios</a>
+                    <a href="https://wa.me/51992123035?text=Hola,%20estoy%20interesado%20en%20sus%20servicios" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-scroll" onclick="scrollToSection('nosotros')">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="section about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quiénes Somos</h2>
+                <p>Conozca más sobre nuestra empresa y nuestro compromiso con la excelencia en el sector electromecánico</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Equipo de SERVIELEC">
+                </div>
+                <div class="about-text">
+                    <h3>Líderes en Soluciones Electromecánicas</h3>
+                    <p>SERVIELEC E.I.R.L. es una empresa arequipeña con más de 15 años de experiencia dedicada a la reparación y mantenimiento de maquinarias electromecánicas. Nuestro compromiso con el progreso de nuestros clientes nos ha posicionado como referentes en el sector industrial y minero.</p>
+                    <p>Contamos con un equipo de profesionales altamente calificados y certificados que garantizan siempre el cumplimiento de los más altos estándares de calidad, seguridad y cuidado del medio ambiente en cada uno de nuestros proyectos.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Calidad Certificada</h4>
+                                <p>Utilizamos materiales de primera calidad y seguimos estrictos protocolos internacionales.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Disponibilidad 24/7</h4>
+                                <p>Servicio de emergencia disponible las 24 horas, los 365 días del año para minimizar sus tiempos de inactividad.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Equipo Especializado</h4>
+                                <p>Contamos con técnicos especializados en las últimas tecnologías electromecánicas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Vision Section -->
+    <section class="section mission-vision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Misión y Visión</h2>
+                <p>Los principios fundamentales que guían nuestro trabajo y nos impulsan hacia el futuro</p>
+            </div>
+
+            <div class="mv-container">
+                <div class="mv-item">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Misión</h3>
+                    <p>Somos una empresa de ingeniería que desarrolla soluciones técnicas y de gestión en los sectores minería, industria e infraestructura, con el fin de generar valor a nuestros clientes, colaboradores y accionistas a través de servicios especializados de mantenimiento electromecánico.</p>
+                </div>
+                <div class="mv-item">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Visión</h3>
+                    <p>Ser la empresa líder en el rubro de mantenimiento electromecánico en el Perú, reconocida por brindar soluciones oportunas, eficientes y de calidad a las necesidades de sus clientes, utilizando tecnología de punta y contribuyendo al desarrollo sostenible del sector industrial.</p>
+                </div>
+                <div class="mv-item">
+                    <div class="mv-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Compromiso</h3>
+                    <p>Nuestro compromiso es superar las expectativas de nuestros clientes mediante la excelencia en el servicio, la innovación tecnológica y el desarrollo continuo de nuestro capital humano, siempre con responsabilidad social y ambiental.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="section services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Soluciones especializadas para el mantenimiento de sus equipos electromecánicos</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Servicio 1 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Mantenimiento Predictivo</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Anticipe fallas y evite tiempos muertos con nuestro servicio de mantenimiento predictivo de última generación.</p>
+                        <ul>
+                            <li>Análisis Vibracional TPI</li>
+                            <li>Alineamiento Láser de poleas y ejes</li>
+                            <li>Implementación de Programas PAM/PDM</li>
+                            <li>Pruebas de Resistencia Óhmica</li>
+                            <li>Pruebas Meg. Ohm e HIPOT DC</li>
+                            <li>Pruebas Surge (Impulsos)</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <a href="https://wa.me/51992123035?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Mantenimiento%20Predictivo" class="btn btn-whatsapp" target="_blank">Solicitar por WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Mantenimiento Preventivo</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Maximice la vida útil de sus equipos y prevenga fallas inesperadas con nuestro programa de mantenimiento preventivo.</p>
+                        <ul>
+                            <li>Motores Eléctricos</li>
+                            <li>Generadores</li>
+                            <li>Transformadores</li>
+                            <li>Tableros Eléctricos</li>
+                            <li>Balanceo Dinámico</li>
+                            <li>Puesta a Tierra</li>
+                            <li>Limpieza y lubricación</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <a href="https://wa.me/51992123035?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Mantenimiento%20Preventivo" class="btn btn-whatsapp" target="_blank">Solicitar por WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Mantenimiento Correctivo</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Reparación especializada de motores y componentes eléctricos para restaurar su funcionamiento óptimo.</p>
+                        <ul>
+                            <li>Bobinado de Jaula de Ardilla</li>
+                            <li>Bobinado de Rotor</li>
+                            <li>Bobinado de Motores de Velocidad Variable</li>
+                            <li>Bobinado de Generadores y Transformadores</li>
+                            <li>Fabricación de Bobinas en General</li>
+                            <li>Reparación de componentes eléctricos</li>
+                            <li>Soldadura especializada</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <a href="https://wa.me/51992123035?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Mantenimiento%20Correctivo" class="btn btn-whatsapp" target="_blank">Solicitar por WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Montaje de Motores</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Instalación profesional de sistemas motrices con equipos de última generación para garantizar un funcionamiento óptimo.</p>
+                        <ul>
+                            <li>Montaje de Motores AC y DC</li>
+                            <li>Montaje de Motores Axiales</li>
+                            <li>Montaje de Moto reductores</li>
+                            <li>Montaje de Ventiladores</li>
+                            <li>Fabricación de Bases y Estructuras</li>
+                            <li>Alineamiento de precisión</li>
+                            <li>Pruebas de puesta en marcha</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <a href="https://wa.me/51992123035?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Montaje%20de%20Motores" class="btn btn-whatsapp" target="_blank">Solicitar por WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h3>Servicios Adicionales</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Soluciones complementarias para optimizar el funcionamiento de sus equipos eléctricos y sistemas industriales.</p>
+                        <ul>
+                            <li>Embobinado de Tapas</li>
+                            <li>Fabricación de Ejes en Acero VCL o Inoxidable</li>
+                            <li>Metalizado de Asientos de Rodaje</li>
+                            <li>Mantenimiento de Cajas Reductoras</li>
+                            <li>Fabricación y Mantenimiento de Tableros</li>
+                            <li>Diseño de Planos Eléctricos</li>
+                            <li>Asesoría técnica especializada</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <a href="https://wa.me/51992123035?text=Hola,%20estoy%20interesado%20en%20los%20Servicios%20Adicionales" class="btn btn-whatsapp" target="_blank">Solicitar por WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h3>Servicios de Emergencia</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Atendemos emergencias las 24 horas del día para minimizar los tiempos de inactividad de sus operaciones.</p>
+                        <ul>
+                            <li>Atención prioritaria 24/7</li>
+                            <li>Diagnóstico rápido y eficiente</li>
+                            <li>Reparaciones in situ</li>
+                            <li>Suministro de repuestos urgentes</li>
+                            <li>Equipos de respuesta rápida</li>
+                            <li>Soporte técnico permanente</li>
+                            <li>Soluciones inmediatas</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <a href="https://wa.me/51992123035?text=Hola,%20necesito%20servicio%20de%20emergencia" class="btn btn-whatsapp" target="_blank">Solicitar por WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="300">0</div>
+                    <div class="stat-text">Proyectos Completados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-text">Clientes Satisfechos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-text">Años de Experiencia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-text">% Clientes Satisfechos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clientes" class="section clients">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Clientes</h2>
+                <p>Empresas líderes que han confiado en nuestros servicios y soluciones</p>
+            </div>
+
+            <div class="clients-slider owl-carousel owl-theme">
+                <div class="client-item">
+                    <img src="/imagen/yura.png" alt="recolsa" class="client-logo">
+                </div>
+                <div class="client-item">
+                    <img src="/imagen/tisur.png" alt="recolsa" class="client-logo">
+                </div>
+                <div class="client-item">
+                    <img src="/imagen/backus.png" alt="Backus" class="client-logo">
+                </div>
+                <div class="client-item">
+                    <img src="/imagen/AC.png" alt="AC" class="client-logo">
+                </div>
+                <div class="client-item">
+                    <img src="/imagen/alicorp.png" alt="alicorp" class="client-logo">
+                </div>
+                 <div class="client-item">
+                    <img src="/imagen/famai.png" alt="famai" class="client-logo">
+                </div>
+                <div class="client-item">
+                    <img src="/imagen/Gloria.png" alt="Gloria" class="client-logo">
+                </div>
+                <div class="client-item">
+                    <img src="/imagen/heineken.png" alt="heineken" class="client-logo">
+                </div>
+                 <div class="client-item">
+                    <img src="/imagen/hofmann.png" alt="hofmann" class="client-logo">
+                </div>
+                <div class="client-item">
+                    <img src="/imagen/iberica.png" alt="iberica" class="client-logo">
+                </div>
+                <div class="client-item">
+                    <img src="/imagen/ism.png" alt="ism" class="client-logo">
+                </div>
+                 <div class="client-item">
+                    <img src="/imagen/Laive.png" alt="Laive" class="client-logo">
+                </div>
+                <div class="client-item">
+                    <img src="/imagen/recolsa.png" alt="recolsa" class="client-logo">
+                </div>
+                <div class="client-item">
+                    <img src="/imagen/softys.png" alt="recolsa" class="client-logo">
+                </div>
+                <div class="client-item">
+                    <img src="/imagen/yanaquihua.png" alt="recolsa" class="client-logo">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonios</h2>
+                <p>Lo que nuestros clientes dicen sobre la calidad de nuestros servicios</p>
+            </div>
+
+            <div class="testimonials-slider owl-carousel owl-theme">
+                <div class="testimonial-item">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente Satisfecho">
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"SERVIELEC ha sido nuestro proveedor de mantenimiento por más de 5 años. Su servicio es excepcional, con técnicos altamente capacitados y respuesta inmediata ante emergencias. Hemos reducido nuestros tiempos de inactividad en un 40% gracias a su programa de mantenimiento predictivo."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Juan Pérez</h4>
+                        <p class="testimonial-position">Gerente de Planta, Minera ABC</p>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente Satisfecho">
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"El equipo de SERVIELEC resolvió un problema crítico en nuestros motores en tiempo récord. Su expertise y profesionalismo superaron nuestras expectativas. Su capacidad de respuesta 24/7 es fundamental para nuestras operaciones mineras que no pueden detenerse."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>María Rodríguez</h4>
+                        <p class="testimonial-position">Directora de Operaciones, Industria XYZ</p>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Cliente Satisfecho">
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Llevamos trabajando con SERVIELEC desde hace 3 años y siempre han demostrado un compromiso total con la calidad y los plazos de entrega. Su personal técnico está altamente capacitado y utilizan tecnología de punta en todos sus servicios. Muy recomendables."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Carlos Gutierrez</h4>
+                        <p class="testimonial-position">Superintendente de Mantenimiento, Empresa 123</p>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente Satisfecho">
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"La implementación del programa de mantenimiento predictivo que nos propuso SERVIELEC ha sido una de las mejores decisiones que hemos tomado. No solo hemos reducido nuestros costos de mantenimiento, sino que también hemos aumentado la vida útil de nuestros equipos."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Laura Mendoza</h4>
+                        <p class="testimonial-position">Jefa de Producción, Compañía DEF</p>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contáctenos</h2>
+                <p>Estamos listos para atender sus necesidades de mantenimiento electromecánico</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <p>No dude en contactarnos para cualquier consulta o solicitud de servicio. Nuestro equipo está listo para ayudarle.</p>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Dirección</h4>
+                            <p>Av. Madre de Dios A3 Yanahuara, Arequipa, Perú</p>
+                            <p>Jirón Hualcán 1462 – Urb. Palmas Reales, Los Olivos, Lima</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Teléfonos</h4>
+                            <p>+51 992 123 035 (Gerente General)</p>
+                            <p>+51 972 695 976 (WhatsApp Empresa)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Correo Electrónico</h4>
+                            <p>kfarias.servielec@gmail.com</p>
+                            <p>vservielec@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                            <p>Sábados: 9:00 AM - 1:00 PM</p>
+                            <p>Emergencias: 24/7</p>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-buttons">
+                        <a href="https://wa.me/51992123035?text=Hola,%20estoy%20interesado%20en%20sus%20servicios" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Contactar al Gerente General
+                        </a>
+                        <a href="https://wa.me/51972695976?text=Hola,%20estoy%20interesado%20en%20sus%20servicios" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Contactar a SERVIELEC
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envíenos un Mensaje</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Empresa</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Servicio de Interés *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Seleccione un servicio</option>
+                                <option value="predictivo">Mantenimiento Predictivo</option>
+                                <option value="preventivo">Mantenimiento Preventivo</option>
+                                <option value="correctivo">Mantenimiento Correctivo</option>
+                                <option value="montaje">Montaje de Motores</option>
+                                <option value="emergencia">Servicio de Emergencia</option>
+                                <option value="otros">Otros Servicios</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section location-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestras Ubicaciones</h2>
+                <p>Visite nuestras instalaciones en Arequipa y Lima</p>
+            </div>
+            
+            <div class="location-tabs">
+                <button class="location-tab active" data-tab="arequipa">Sede Arequipa</button>
+                <button class="location-tab" data-tab="lima">Sede Lima</button>
+            </div>
+            
+            <div class="location-content active" id="arequipa-map">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d449.0639552387208!2d-71.56885957212485!3d-16.406936855542472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b007a3a3ab1%3A0x47c9a3d4ae11c9d2!2sSERVIELEC%20E.I.R.L.!5e1!3m2!1ses-419!2spe!4v1757709613633!5m2!1ses-419!2spe" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+            <div class="location-content" id="lima-map">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d792.6700694929316!2d-77.08064758661814!3d-11.993946385208057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2spe!4v1757712238454!5m2!1ses-419!2spe" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="/imagen/servielec.png" alt="SERVIELEC Logo">
+                    </div>
+                    <p>Especialistas en mantenimiento de motores eléctricos con los más altos estándares de calidad, seguridad y cuidado del medio ambiente.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#clientes">Clientes</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Nuestros Servicios</h3>
+                    <ul>
+                        <li><a href="#servicios">Mantenimiento Predictivo</a></li>
+                        <li><a href="#servicios">Mantenimiento Preventivo</a></li>
+                        <li><a href="#servicios">Mantenimiento Correctivo</a></li>
+                        <li><a href="#servicios">Montaje de Motores</a></li>
+                        <li><a href="#servicios">Servicios Adicionales</a></li>
+                        <li><a href="#servicios">Servicios de Emergencia</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h3>Boletín Informativo</h3>
+                    <p>Suscríbase a nuestro boletín para recibir noticias, actualizaciones y tips de mantenimiento.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Su correo electrónico" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div class="footer-actions" style="margin-top: 20px;">
+                        <a href="#contacto" class="btn" style="padding: 10px 20px; width: 100%; text-align: center; margin-bottom: 10px;">Solicitar Cotización</a>
+                        <a href="https://wa.me/51992123035" class="btn btn-whatsapp" style="padding: 10px 20px; width: 100%; text-align: center;" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 SERVIELEC E.I.R.L. - Todos los derechos reservados | Diseñado con <i class="fas fa-heart" style="color: #e25555;"></i> para nuestros clientes</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(function() {
+                preloader.style.opacity = '0';
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 800);
+            }, 1500);
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.querySelector('i').classList.toggle('fa-moon');
+            themeToggle.querySelector('i').classList.toggle('fa-sun');
+            
+            // Save theme preference to localStorage
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.querySelector('i').classList.add('fa-sun');
+            themeToggle.querySelector('i').classList.remove('fa-moon');
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        menuToggle.querySelector('i').classList.add('fa-bars');
+                        menuToggle.querySelector('i').classList.remove('fa-times');
+                    }
+                }
+            });
+        });
+
+        // Scroll to section function
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Location tabs
+        const locationTabs = document.querySelectorAll('.location-tab');
+        
+        locationTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.location-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.location-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                document.getElementById(tabId + '-map').classList.add('active');
+            });
+        });
+
+        // Initialize Owl Carousel for testimonials
+        $(document).ready(function(){
+            $(".testimonials-slider").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 6000,
+                autoplayHoverPause: true,
+                dots: true,
+                nav: true,
+                navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+                animateOut: 'fadeOut',
+                animateIn: 'fadeIn'
+            });
+            
+            // Initialize Owl Carousel for clients
+            $(".clients-slider").owlCarousel({
+                items: 5,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                dots: false,
+                nav: true,
+                navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+                responsive: {
+                    0: {
+                        items: 2
+                    },
+                    576: {
+                        items: 3
+                    },
+                    768: {
+                        items: 4
+                    },
+                    992: {
+                        items: 5
+                    }
+                }
+            });
+        });
+
+        // Animate stats counter
+        function animateCounter() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = Math.ceil(target / speed);
+                
+                if (count < target) {
+                    counter.innerText = Math.min(count + increment, target);
+                    setTimeout(animateCounter, 1);
+                }
+            });
+        }
+
+        // Initialize counter animation when stats section is in view
+        const statsSection = document.querySelector('.stats');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simple form validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const company = document.getElementById('company').value;
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value;
+                
+                if (!name || !email || !phone || !service || !message) {
+                    alert('Por favor, complete todos los campos obligatorios.');
+                    return;
+                }
+                
+                // Create WhatsApp message
+                const whatsappMessage = `Hola, me interesan sus servicios.%0A%0A*Nombre:* ${name}%0A*Email:* ${email}%0A*Teléfono:* ${phone}%0A*Empresa:* ${company || 'No especificada'}%0A*Servicio de interés:* ${service}%0A*Mensaje:* ${message}`;
+                
+                // Redirect to WhatsApp
+                window.open(`https://wa.me/51992123035?text=${whatsappMessage}`, '_blank');
+                
+                // Show confirmation message
+                alert('¡Gracias por su mensaje! Será redirigido a WhatsApp para continuar con la conversación.');
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+
+        // Add animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .feature-item, .mv-item, .stat-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.service-card, .feature-item, .mv-item, .stat-item').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(50px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+        // Initial check
+        animateOnScroll();
+    </script>
+</body>
+</html>

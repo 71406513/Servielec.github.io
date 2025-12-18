@@ -419,22 +419,30 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imagen/Mot_serv.png') no-repeat center center/cover;
             color: white;
             position: relative;
             padding-top: 80px;
             overflow: hidden;
         }
 
-        .hero-video {
+        .hero-background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imagen/Mot_serv.png') no-repeat center center/cover;
             z-index: -1;
-            opacity: 0.2;
+        }
+
+        .hero-background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
         }
 
         .hero-content {
@@ -743,25 +751,49 @@
         }
 
         .service-header {
-            padding: 40px 30px 0;
-            text-align: center;
+            padding: 0 0 20px;
             position: relative;
         }
 
+        .service-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            margin-bottom: 20px;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
         .service-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-            display: inline-block;
-            width: 80px;
-            height: 80px;
-            line-height: 80px;
-            background: rgba(0, 99, 179, 0.1);
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
             border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 2;
+            box-shadow: var(--shadow);
         }
 
         .service-body {
-            padding: 0 30px 30px;
+            padding: 40px 30px 30px;
             flex-grow: 1;
         }
 
@@ -1134,11 +1166,23 @@
             z-index: -1;
         }
 
+        .dark-mode .location-section {
+            background: var(--light);
+        }
+
+        .dark-mode .location-section::before {
+            opacity: 0.05;
+        }
+
         .location-tabs {
             display: flex;
             margin-bottom: 30px;
             border-bottom: 2px solid var(--light-gray);
             justify-content: center;
+        }
+
+        .dark-mode .location-tabs {
+            border-bottom: 2px solid var(--dark-gray);
         }
 
         .location-tab {
@@ -1154,7 +1198,8 @@
         }
 
         .dark-mode .location-tab {
-            background: var(--dark);
+            background: var(--light);
+            color: var(--dark-gray);
         }
 
         .location-tab.active {
@@ -1165,6 +1210,7 @@
 
         .dark-mode .location-tab.active {
             background: var(--light-gray);
+            color: var(--primary);
         }
 
         .location-tab:first-child {
@@ -1546,12 +1592,8 @@
         }
     </style>
 </head>
+
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader"></div>
-        <div class="loader-text">Cargando SERVIELEC...</div>
-    </div>
 
     <!-- Header -->
     <header>
@@ -1589,9 +1631,9 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <video autoplay muted loop class="hero-video">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-an-electric-motor-12585-large.mp4" type="video/mp4">
-        </video>
+        <div class="hero-background">
+            <div class="hero-background-overlay"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <h1>Soluciones Integrales en Mantenimiento Electromecánico</h1>
@@ -1705,9 +1747,12 @@
             </div>
 
             <div class="services-grid">
-                <!-- Servicio 1 -->
+                <!-- Servicio 1: Mantenimiento Predictivo -->
                 <div class="service-card">
                     <div class="service-header">
+                        <div class="service-image">
+                            <img src="imagen/Predic_motor2.png" alt="Mantenimiento Predictivo">
+                        </div>
                         <div class="service-icon">
                             <i class="fas fa-search"></i>
                         </div>
@@ -1729,9 +1774,12 @@
                     </div>
                 </div>
 
-                <!-- Servicio 2 -->
+                <!-- Servicio 2: Mantenimiento Preventivo -->
                 <div class="service-card">
                     <div class="service-header">
+                        <div class="service-image">
+                            <img src="imagen/Preventivo.png" alt="Mantenimiento Preventivo">
+                        </div>
                         <div class="service-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
@@ -1754,9 +1802,12 @@
                     </div>
                 </div>
 
-                <!-- Servicio 3 -->
+                <!-- Servicio 3: Mantenimiento Correctivo -->
                 <div class="service-card">
                     <div class="service-header">
+                        <div class="service-image">
+                            <img src="imagen/Correctivo.png" alt="Mantenimiento Correctivo">
+                        </div>
                         <div class="service-icon">
                             <i class="fas fa-tools"></i>
                         </div>
@@ -1779,9 +1830,12 @@
                     </div>
                 </div>
 
-                <!-- Servicio 4 -->
+                <!-- Servicio 4: Montaje de Motores -->
                 <div class="service-card">
                     <div class="service-header">
+                        <div class="service-image">
+                            <img src="imagen/Montaje.png" alt="Montaje de Motores">
+                        </div>
                         <div class="service-icon">
                             <i class="fas fa-cogs"></i>
                         </div>
@@ -1804,9 +1858,12 @@
                     </div>
                 </div>
 
-                <!-- Servicio 5 -->
+                <!-- Servicio 5: Servicios Adicionales -->
                 <div class="service-card">
                     <div class="service-header">
+                        <div class="service-image">
+                            <img src="imagen/Tapas.png" alt="Servicios Adicionales">
+                        </div>
                         <div class="service-icon">
                             <i class="fas fa-plus-circle"></i>
                         </div>
@@ -1829,9 +1886,12 @@
                     </div>
                 </div>
 
-                <!-- Servicio 6 -->
+                <!-- Servicio 6: Servicios de Emergencia -->
                 <div class="service-card">
                     <div class="service-header">
+                        <div class="service-image">
+                            <img src="imagen/Mot_quemado.png" alt="Servicios de Emergencia">
+                        </div>
                         <div class="service-icon">
                             <i class="fas fa-hard-hat"></i>
                         </div>
@@ -1862,11 +1922,11 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number" data-count="300">0</div>
+                    <div class="stat-number" data-count="850">0</div>
                     <div class="stat-text">Proyectos Completados</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-number" data-count="15">0</div>
                     <div class="stat-text">Clientes Satisfechos</div>
                 </div>
                 <div class="stat-item">
@@ -2178,13 +2238,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
+   <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <img src="/imagen/servielec.png" alt="SERVIELEC Logo">
+                        <img src="imagen/servielec.png" alt="SERVIELEC Logo">
                     </div>
                     <p>Especialistas en mantenimiento de motores eléctricos con los más altos estándares de calidad, seguridad y cuidado del medio ambiente.</p>
                     <div class="footer-social">
@@ -2237,7 +2297,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2023 SERVIELEC E.I.R.L. - Todos los derechos reservados | Diseñado con <i class="fas fa-heart" style="color: #e25555;"></i> para nuestros clientes</p>
+                <p>&copy; 2025 SERVIELEC E.I.R.L. - Todos los derechos reservados | Diseñado con <i class="fas fa-heart" style="color: #e25555;"></i> para nuestros clientes</p>
             </div>
         </div>
     </footer>
@@ -2487,7 +2547,6 @@
         animateOnScroll();
     </script>
 </body>
-
 </html>
 
-
+ 

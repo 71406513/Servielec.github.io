@@ -61,6 +61,8 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-y: scroll;           /* fuerza la barra vertical siempre presente */
+            scrollbar-gutter: stable;     /* reserva espacio (soporte moderno) */
         }
 
         body {
@@ -71,6 +73,16 @@
             transition: var(--transition);
             overflow-x: hidden;
         }
+
+        html, body {
+        overflow-y: scroll;
+        scrollbar-gutter: stable;
+        }
+
+        .no-scroll {
+        overflow: hidden;
+        }
+
 
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
@@ -242,7 +254,10 @@
         }
 
         .header-scrolled {
-            padding: 5px 0;
+        /* solo efectos visuales, no padding ni cambio de altura */
+        box-shadow: var(--shadow-dark);
+        background: rgba(255,255,255,0.98);
+        transform: translateZ(0);
         }
 
         .header-container {
@@ -925,15 +940,21 @@
             height: 90px;
             width: auto;
             margin: 0 auto;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: var(--transition);
+            filter: none !important;      /* quitar escala de grises */
+            opacity: 1 !important;        /* asegurarse que esté visible en color */
+            transition: transform 0.35s ease, opacity 0.3s ease;
         }
 
         .client-item:hover .client-logo {
-            filter: grayscale(0);
-            opacity: 1;
-            transform: scale(1.1);
+            filter: none !important;
+            opacity: 1 !important;
+            transform: scale(1.05);       /* opcional: ligero zoom al pasar el mouse */
+        }
+
+        /* Forzar color también en modo oscuro si hay reglas que lo cambian */
+        .dark-mode .client-logo {
+            filter: none !important;
+            opacity: 1 !important;
         }
 
         /* Testimonials Section */
@@ -1561,8 +1582,8 @@
                 display: flex;
             }
             
-            .section {
-                padding: 80px 0;
+            section {
+                scroll-margin-top: calc(var(--header-height) + 10px);
             }
             
             .section-title h2 {
@@ -2380,14 +2401,27 @@
             }, 1500);
         });
 
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle (compensa el ancho de la scrollbar para evitar salto)
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.querySelector('.nav-menu');
-        
+
+        function getScrollbarWidth() {
+            return window.innerWidth - document.documentElement.clientWidth;
+        }
+
         menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
+            const isActive = navMenu.classList.toggle('active');
             menuToggle.querySelector('i').classList.toggle('fa-bars');
             menuToggle.querySelector('i').classList.toggle('fa-times');
+
+            if (isActive) {
+                const sw = getScrollbarWidth();
+                if (sw > 0) document.body.style.paddingRight = sw + 'px';
+                document.body.classList.add('no-scroll');
+            } else {
+                document.body.classList.remove('no-scroll');
+                document.body.style.paddingRight = '';
+            }
         });
 
         // Theme Toggle
@@ -2427,33 +2461,33 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 80;
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - headerHeight,
                         behavior: 'smooth'
                     });
-                    
-                    // Close mobile menu if open
+
                     if (navMenu.classList.contains('active')) {
                         navMenu.classList.remove('active');
                         menuToggle.querySelector('i').classList.add('fa-bars');
                         menuToggle.querySelector('i').classList.remove('fa-times');
+                        document.body.classList.remove('no-scroll');
+                        document.body.style.paddingRight = '';
                     }
                 }
             });
         });
 
-        // Scroll to section function
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             if (section) {
+                const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 80;
                 window.scrollTo({
-                    top: section.offsetTop - 80,
+                    top: section.offsetTop - headerHeight,
                     behavior: 'smooth'
                 });
             }

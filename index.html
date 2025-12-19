@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SERVIELEC E.I.R.L. - Especialistas en Mantenimiento de Motores Eléctricos</title>
+    <link rel="icon" href="imagen/LogoServielec.png" type="image/png" sizes="any">
+    <link rel="shortcut icon" href="imagen/LogoServielec.png" type="image/png">
+    <link rel="apple-touch-icon" href="imagen/LogoServielec.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -31,6 +34,7 @@
             --shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.3);
             --border-radius: 8px;
             --border-radius-lg: 12px;
+            --header-height: 80px;
         }
 
         .dark-mode {
@@ -230,6 +234,7 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             backdrop-filter: blur(10px);
+            height: var(--header-height);
         }
 
         .dark-mode header {
@@ -244,7 +249,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 0 0; /* ahora la altura la controla header */
         }
 
         .logo {
@@ -416,14 +421,15 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: calc(100vh - var(--header-height));
             display: flex;
             align-items: center;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imagen/Mot_serv.png') no-repeat center center/cover;
             color: white;
             position: relative;
-            padding-top: 80px;
+            padding-top: 20px; 
             overflow: hidden;
+            background-position: center center;
         }
 
         .hero-background {
@@ -753,6 +759,7 @@
         .service-header {
             padding: 0 0 20px;
             position: relative;
+            text-align: center
         }
 
         .service-image {
@@ -1419,6 +1426,63 @@
             z-index: 1;
         }
 
+        /* Dark-mode footer fixes: fuerza fondo oscuro, texto legible y reduce brillo de la imagen */
+        .dark-mode footer {
+            background: rgba(11,17,26,0.95); /* fondo oscuro suave */
+            color: rgba(255,255,255,0.95);   /* texto claro */
+        }
+
+        .dark-mode footer::before {
+            /* atenua la imagen de fondo para que no deje el footer muy brillante */
+            opacity: 0.02 !important;
+            filter: grayscale(100%) brightness(0.35) contrast(0.9);
+        }
+
+        /* Asegura contraste en títulos y enlaces del footer */
+        .dark-mode .footer-links h3,
+        .dark-mode .footer-newsletter h3 {
+            color: rgba(255,255,255,0.95);
+        }
+
+        .dark-mode .footer-links a {
+            color: rgba(255,255,255,0.85);
+        }
+
+        .dark-mode .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Newsletter / inputs */
+        .dark-mode .newsletter-form {
+            background: rgba(255,255,255,0.04);
+        }
+
+        .dark-mode .newsletter-form input {
+            color: rgba(255,255,255,0.95);
+        }
+
+        .dark-mode .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Iconos sociales y logo */
+        .dark-mode .social-link {
+            background: rgba(255,255,255,0.06);
+            color: white;
+        }
+
+        .dark-mode .footer-logo img {
+            filter: none; /* si el logo queda muy claro/oscuro, ajustar con: invert(1) brightness(0.9) */
+            opacity: 0.95;
+            height: 60px;
+        }
+
+        /* Línea superior del footer */
+        .dark-mode .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.8);
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
             .container {
@@ -1468,10 +1532,10 @@
             
             .nav-menu {
                 position: fixed;
-                top: 80px;
+                top: var(--header-height);
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
+                height: calc(100vh - var(--header-height));
                 background: var(--light);
                 flex-direction: column;
                 align-items: center;
@@ -1599,7 +1663,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="imagen/servielec.png" alt="SERVIELEC Logo">
+                <img src="imagen/LogoServielec.png" alt="SERVIELEC Logo">
                 <h1>SERVIELEC</h1>
             </div>
 
